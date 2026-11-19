@@ -1,0 +1,257 @@
+/* 基本設定 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px 16px;
+  background: #ffffff;
+  color: #24272c;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif;
+  line-height: 1.6;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* アプリ全体 */
+.app {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* タイトル */
+.app-header {
+  margin-bottom: 24px;
+}
+
+.app-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.book-icon {
+  font-size: 28px;
+}
+
+/* 登録冊数・読了冊数 */
+.summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+  background: #f3f4f6;
+  border-radius: 12px;
+}
+
+.summary-label {
+  margin: 0 0 4px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.summary-value {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.summary-unit {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* 登録フォーム */
+.register-section {
+  margin-bottom: 24px;
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.book-form input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  outline: none;
+}
+
+.book-form input:focus {
+  border-color: #64748b;
+  box-shadow: 0 0 0 3px #e2e8f0;
+}
+
+.add-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #1d3a69;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.add-button:hover {
+  background: #404650;
+}
+
+/* 絞り込みボタン */
+.filter-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.filter-button {
+  min-width: 0;
+  padding: 10px 4px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.filter-button:hover {
+  background: #f3f4f6;
+}
+
+.filter-button.active {
+  background: #29446e;
+  border-color: #29446e;
+  color: #ffffff;
+}
+
+/* 本の一覧 */
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* 本のカード */
+.book-card {
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.book-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.book-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.book-title {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.book-author {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+/* 削除ボタン */
+.delete-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  padding: 7px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #6b7280;
+}
+
+.delete-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.delete-button:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* 読書状態 */
+.book-status {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #374151;
+}
+
+/* キーボード操作 */
+button:focus-visible,
+select:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+/* スマートフォン */
+@media (max-width: 480px) {
+  body {
+    padding: 18px 12px;
+  }
+
+  .app-header h1 {
+    font-size: 23px;
+  }
+
+  .summary {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .summary-value {
+    font-size: 26px;
+  }
+
+  .book-card {
+    padding: 14px;
+  }
+
+  .filter-button {
+    font-size: 13px;
+  }
+}
